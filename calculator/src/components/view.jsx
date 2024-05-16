@@ -3,8 +3,10 @@ import PropTypes from 'prop-types';
 import './view.css';
 
 const View = ({ value, result }) => {
-    if (result && value.length > 9) {
+    if (result) {
+      if(value.length > 9 || value.includes('-')){
         value = 'ERROR'
+      }
     }
     const displayValue = value.length > 9 ? value.slice(0, 9) : value;
     return <div className="view">{displayValue}</div>;

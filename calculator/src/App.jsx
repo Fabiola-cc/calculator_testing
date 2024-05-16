@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import ButtonSection from './components/Buttons'
 import View from './components/view'
@@ -8,12 +8,19 @@ function App() {
   const [result, setResult] = useState(false)
   const [calculate, setCalculate] = useState('');
 
+  useEffect(() => {
+    if (result) {
+      handleEqualClick();
+    }
+  }, [result]);
+
   const handleEqualClick = () => {
-      setResult(true)
+    console.log(calculate)
       try {
-          setDisplay(eval(calculate)); // eval is used here for simplicity, be cautious using it in production
+        const result = eval(calculate);
+        setDisplay(result.toString());
       } catch (error) {
-          setDisplay(1000000000)
+          setDisplay('1000000000')
       }
   };
 
@@ -24,16 +31,18 @@ function App() {
               negative = '-'
           }
           number = ''
+      } else if (number === '.' && display.includes('.')){
+        number = ''
       }
       setDisplay(prevDisplay => negative + prevDisplay + number)
     };
   
-    const handleOperatorClick = (operator) => {
+    const handleOperatorClick = (operator) => {      
       console.log(display)
       setCalculate(prevCalculate => prevCalculate + display)
       if (operator === '=') {
         console.log(calculate)
-        handleEqualClick()
+        setResult(true)
       } else {
           setCalculate(prevCalculate => prevCalculate + ' ' + operator + ' ');
           setDisplay('');
