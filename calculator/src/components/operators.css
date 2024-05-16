@@ -12,3 +12,8 @@
     height: 100%;
     font-size: 2em;
 }
+
+.operators button:hover,
+.operators button.active{
+    border-color: #8C2A3C;
+}

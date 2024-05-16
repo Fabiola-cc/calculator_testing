@@ -12,4 +12,9 @@
     height: 100%;
     font-size: 2em;
   }
+
+.numbers button:hover,
+.numbers button.active{
+    border-color: #8C2A3C;
+}
   
