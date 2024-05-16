@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import './operators.css'
 
@@ -12,6 +13,10 @@ const Operators = ({ onClick }) => {
       ))}
     </div>
   );
+};
+
+Operators.propTypes = {
+  onClick: PropTypes.func.isRequired,
 };
 
 export default Operators;

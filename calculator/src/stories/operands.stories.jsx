@@ -7,8 +7,6 @@ export default {
   component: Operands,
 };
 
-const Template = (args) => <Operands {...args} />;
-
 export const Default = {
     args: {
         onClick: fn()

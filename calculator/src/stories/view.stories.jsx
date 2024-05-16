@@ -1,5 +1,5 @@
 import React from 'react';
-import View from '../components/View';
+import View from '../components/view';
 
 export default {
   title: 'Calculator/View',
@@ -8,8 +8,22 @@ export default {
 
 const Template = (args) => <View {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
-  value: '123456789012345', // Cadena larga para probar el recorte
-  result: true
+export const WithResultTrue = Template.bind({});
+WithResultTrue.args = {
+  value: '1234567890', // Valor de ejemplo
+  result: true,
 };
+
+export const WithResultFalse = Template.bind({});
+WithResultFalse.args = {
+  value: '1234567890', // Valor de ejemplo
+  result: false,
+};
+
+
+
+
+
+
+
+
