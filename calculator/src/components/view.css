@@ -1,0 +1,12 @@
+.view {
+    background-color: #BF7373;
+    color: #F2EBF0;
+    height: 20vh;
+    width: 80vw;
+    margin: 1%;
+    padding: 1%;
+    font-size: xx-large;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}

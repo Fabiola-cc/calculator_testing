@@ -1,0 +1,8 @@
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+Button {
+    color: #8C2A3C;
+}

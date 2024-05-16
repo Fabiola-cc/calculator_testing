@@ -1,8 +1,8 @@
-// src/components/Operators.jsx
 import React from 'react';
+import './operators.css'
 
 const Operators = ({ onClick }) => {
-  const operators = ['+', '-', '*', '/'];
+  const operators = ['+', '-', '*', '='];
   return (
     <div className="operators">
       {operators.map(operator => (

@@ -1,15 +1,15 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Numbers from './components/numbers'
+import ButtonSection from './components/Buttons'
+import View from './components/view'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      <Numbers />
+      <View value='123456789000' result={true} />
+      <ButtonSection/>
     </>
   )
 }

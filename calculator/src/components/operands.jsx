@@ -1,8 +1,7 @@
-// src/components/Numbers.jsx
 import React from 'react';
-import './numbers.css'
+import './operands.css'
 
-const Numbers = ({ onClick }) => {
+const operands = ({ onClick }) => {
   const numbers = ['9', '8', '7', '6', '5', '4', '3', '2', '1', '⁺/₋', '0', '.'];
   return (
     <div className="numbers">
@@ -15,4 +14,4 @@ const Numbers = ({ onClick }) => {
   );
 };
 
-export default Numbers;
+export default operands;
