@@ -13,14 +13,14 @@ function App() {
       try {
           setDisplay(eval(calculate)); // eval is used here for simplicity, be cautious using it in production
       } catch (error) {
-          setResult('Error');
+          setDisplay(1000000000)
       }
   };
 
   const handleNumberClick = (number) => {
       let negative = ''
       if (number === '⁺/₋') {
-          if (actualDisplay[0] !== '-') {
+          if (display[0] !== '-') {
               negative = '-'
           }
           number = ''
@@ -29,20 +29,29 @@ function App() {
     };
   
     const handleOperatorClick = (operator) => {
+      console.log(display)
+      setCalculate(prevCalculate => prevCalculate + display)
       if (operator === '=') {
-          handleEqualClick()
+        console.log(calculate)
+        handleEqualClick()
       } else {
+          setCalculate(prevCalculate => prevCalculate + ' ' + operator + ' ');
           setDisplay('');
-          setCalculate(actualDisplay + ' ' + operator + ' ');
       }
     };
 
+    const handleDelete = () => {
+      setDisplay('');
+      setCalculate('')
+    }
+
 
   return (
-    <>
+    <div className='container'>
       <View value= {display} result={result} />
       <ButtonSection handleNumberClick={handleNumberClick} handleOperatorClick={handleOperatorClick}/>
-    </>
+      <button className='deleteButton' onClick={() => handleDelete()}>ERASE ALL</button>
+    </div>
   )
 }
 
