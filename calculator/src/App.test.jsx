@@ -50,5 +50,41 @@ describe('App component', () => {
     expect(display).toBeInTheDocument();
     });
 
+    test('displays error when result is bigger than 9 digits', () => {
+        render(<App />);
+        const two = screen.getByText('2', { selector: 'button' })
+        const nine = screen.getByText('9', { selector: 'button' })
+        fireEvent.click(two);
+        fireEvent.click(two);
+        fireEvent.click(two);
+        fireEvent.click(two);
+        fireEvent.click(two);
+        fireEvent.click(screen.getByText('*', { selector: 'button' }));
+        fireEvent.click(nine);
+        fireEvent.click(nine);
+        fireEvent.click(nine);
+        fireEvent.click(nine);
+        fireEvent.click(nine);
+        fireEvent.click(nine);
+        fireEvent.click(screen.getByText('=', { selector: 'button' }));
+        const display = screen.getByText('ERROR', { selector: 'div.view' });
+        expect(display).toBeInTheDocument();
+      });
+
+      test('displays result after more than 1 operation', () => {
+        render(<App />);
+        const two = screen.getByText('2', { selector: 'button' })
+        const nine = screen.getByText('9', { selector: 'button' })
+        fireEvent.click(two);
+        fireEvent.click(screen.getByText('+', { selector: 'button' }));
+        fireEvent.click(nine);
+        fireEvent.click(screen.getByText('=', { selector: 'button' }));
+        fireEvent.click(screen.getByText('*', { selector: 'button' }));
+        fireEvent.click(screen.getByText('3', { selector: 'button' }));
+        fireEvent.click(screen.getByText('=', { selector: 'button' }));
+        const display = screen.getByText('33', { selector: 'div.view' });
+        expect(display).toBeInTheDocument();
+      });
+
 })
  

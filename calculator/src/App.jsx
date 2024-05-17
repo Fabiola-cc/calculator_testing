@@ -6,22 +6,25 @@ import View from './components/view'
 function App() {
   const [display, setDisplay] = useState('');
   const [result, setResult] = useState(false)
+  const [complete, setComplete] = useState(false)
   const [calculate, setCalculate] = useState('');
 
   useEffect(() => {
     if (result) {
       handleEqualClick();
     }
-  }, [result]);
+  }, [result && complete]);
 
   const handleEqualClick = () => {
-    console.log(calculate)
       try {
         const result = eval(calculate);
         setDisplay(result.toString());
+        setCalculate(result.toString())
+        console.log(calculate)
       } catch (error) {
           setDisplay('1000000000')
       }
+      setComplete(false)
   };
 
   const handleNumberClick = (number) => {
@@ -35,24 +38,29 @@ function App() {
         number = ''
       }
       setDisplay(prevDisplay => negative + prevDisplay + number)
-    };
-  
-    const handleOperatorClick = (operator) => {      
-      console.log(display)
-      setCalculate(prevCalculate => prevCalculate + display)
-      if (operator === '=') {
-        console.log(calculate)
-        setResult(true)
-      } else {
-          setCalculate(prevCalculate => prevCalculate + ' ' + operator + ' ');
-          setDisplay('');
-      }
-    };
+  };
 
-    const handleDelete = () => {
-      setDisplay('');
-      setCalculate('')
+  const handleOperatorClick = (operator) => {      
+    if (calculate === '') {
+      setCalculate(prevCalculate => prevCalculate + display)  
     }
+    if (operator === '=') {
+      setCalculate(prevCalculate => prevCalculate + display)
+      console.log(calculate)
+      setResult(true)
+      setComplete(true)
+    } else {
+        setCalculate(prevCalculate => prevCalculate + ' ' + operator + ' ');
+        setDisplay('');
+        
+    }
+  };
+
+  const handleDelete = () => {
+    setDisplay('');
+    setCalculate('')
+    setResult(false)
+  }
 
 
   return (
