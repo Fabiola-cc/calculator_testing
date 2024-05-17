@@ -4,7 +4,6 @@ Este es un proyecto de una calculadora simple desarrollada con React. La calcula
 No muestra resultados negativos ni aquellos con más de 9 caracteres.
 
 ## Características
-
 - Suma, resta, multiplicación
 - Interfaz amigable con botones.
 - Soporte para ingreso de números y operadores mediante el teclado.
@@ -13,32 +12,35 @@ No muestra resultados negativos ni aquellos con más de 9 caracteres.
 - Manejo de errores en operaciones inválidas.
 
 ## Instalación
-
 Sigue estos pasos para configurar y ejecutar el proyecto en tu entorno local.
 
 ### Prerrequisitos
-
 - Node.js (versión 14 o superior)
 - npm (versión 6 o superior)
 
 ### Instalación de dependencias
-- `npm install`
+Para que todo funcione correctamente necesitas instalar las dependencias del proyecto con el siguiente comando: 
+`npm install`
 
 ### Ejecutar la aplicación
-- `npm run dev`
+Con las dependencias instaladas, ejecuta la aplicación localmente usando: 
+`npm run dev`
 
-## Ejecutar Pruebas
+## Ejecutar Tests
 ### Configurar Vitest
 Asegúrate de tener Vitest configurado en tu proyecto. Puedes instalarlo usando npm:
-- `npm install vitest --save-dev`
+`npm install vitest --save-dev`
 ### Ejecutar las pruebas
-Para ejecutar las pruebas, utiliza el siguiente comando:
-- `npm run test`
+Para ejecutar las pruebas creadas con vitest, utiliza el siguiente comando:
+`npm run test`
 
 ### Configurar Storybook
 Asegúrate de tener Storybook configurado en tu proyecto. Puedes instalarlo usando npm:
-- `npx sb init`
-
+`npx sb init`
 ### Ejecutar Storybook
 Para ejecutar Storybook, usa el siguiente comando:
-- `npm run storybook`
+`npm run storybook`
+
+## En línea
+Puedes acceder al resultado final a través del siguiente enlace:
+[https://calculator-22787.netlify.app/](https://calculator-22787.netlify.app/)
