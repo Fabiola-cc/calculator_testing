@@ -46,7 +46,6 @@ function App() {
     }
     if (operator === '=') {
       setCalculate(prevCalculate => prevCalculate + display)
-      console.log(calculate)
       setResult(true)
       setComplete(true)
     } else {

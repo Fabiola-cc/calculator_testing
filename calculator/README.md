@@ -1,8 +1,44 @@
-# React + Vite
+# Calculadora React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es un proyecto de una calculadora simple desarrollada con React. La calculadora permite realizar operaciones básicas como suma, resta y multiplicación con números enteros y decimales.
+No muestra resultados negativos ni aquellos con más de 9 caracteres.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Suma, resta, multiplicación
+- Interfaz amigable con botones.
+- Soporte para ingreso de números y operadores mediante el teclado.
+- Resaltado de botones cuando se presionan teclas correspondientes.
+- Manejo de operaciones negativas y decimales.
+- Manejo de errores en operaciones inválidas.
+
+## Instalación
+
+Sigue estos pasos para configurar y ejecutar el proyecto en tu entorno local.
+
+### Prerrequisitos
+
+- Node.js (versión 14 o superior)
+- npm (versión 6 o superior)
+
+### Instalación de dependencias
+- `npm install`
+
+### Ejecutar la aplicación
+- `npm run dev`
+
+## Ejecutar Pruebas
+### Configurar Vitest
+Asegúrate de tener Vitest configurado en tu proyecto. Puedes instalarlo usando npm:
+- `npm install vitest --save-dev`
+### Ejecutar las pruebas
+Para ejecutar las pruebas, utiliza el siguiente comando:
+- `npm run test`
+
+### Configurar Storybook
+Asegúrate de tener Storybook configurado en tu proyecto. Puedes instalarlo usando npm:
+- `npx sb init`
+
+### Ejecutar Storybook
+Para ejecutar Storybook, usa el siguiente comando:
+- `npm run storybook`
